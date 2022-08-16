@@ -108,7 +108,9 @@ function App() {
 
   return (
     <div className="app">
-      <h1>React hooks - Clock</h1>
+      <h1>React hooks - ...</h1>
+
+      <ColorBox />
 
       {/* <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} /> */}
@@ -117,8 +119,8 @@ function App() {
 
       <PostList posts={postList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
-      {showClock && <Clock />}
-      <button onClick={() => setShowClock(false)}>Hide clock</button>
+      {/* {showClock && <Clock />}
+      <button onClick={() => setShowClock(false)}>Hide clock</button> */}
     </div>
   );
 }

@@ -1,79 +1,39 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 ColorBox.propTypes = {
     
 };
 
 function getRandomColor() {
-    const COLOR_LIST = ['deeppink', 'green', 'yellow', 'black', 'blue'];
+    const COLOR_LIST = ['deeppink', 'green', 'yellow', 'black', 'blue']
     const randomIndex = Math.trunc(Math.random() * 5)
-    return COLOR_LIST[randomIndex]
+    return COLOR_LIST[randomIndex] //return vị trí thứ n của mảng.
 }
 
 function ColorBox() {
 
     const [color, setColor] = useState(() => {
         const initColor = localStorage.getItem('box_color' || 'deeppink')
-        return initColor
+        return initColor;
     })
 
     function handleBoxClick() {
-        const newColor = getRandomColor();
-        setColor(newColor);
+        const newColor = getRandomColor(); //khi click có màu mới
+        setColor(newColor);                // cập nhật màu
 
-        localStorage.setItem('box_color', newColor)
+        localStorage.setItem('box_color', newColor) //lưu vào local
     }
 
     return (
-        <div className='color-box'
+        <div 
+        className="color-box" 
         style={{backgroundColor: color}}
         onClick={handleBoxClick}>
-        COLOR-BOX    
+            COLOR BOX
         </div>
     );
 }
 
 export default ColorBox;
-
-
-// import React from 'react';
-// import { useState } from 'react';
-
-// ColorBox.propTypes = {
-    
-// };
-
-// function getRandomColor() {
-//     const COLOR_LIST = ['deeppink', 'green', 'yellow', 'black', 'blue'];
-//     const randomIndex = Math.trunc(Math.random() * 5)
-//     return COLOR_LIST[randomIndex];
-// }
-
-// function ColorBox() {
-    
-
-//     const [color, setColor] = useState(() => {
-//         const initColor = localStorage.getItem('box_color') || 'deeppink';
-//         return initColor;
-//     }); //khoi tao: deeppink
-
-//     function handleBoxClick() {
-//         const newColor = getRandomColor();
-//         setColor(newColor);
-
-//         localStorage.setItem('box_color', newColor);
-//     }
-
-//     return (
-//         <div className='color-box' style={{backgroundColor: color}}
-//         onClick={handleBoxClick}
-//         >
-//            COLOR BOX 
-//         </div>
-//     );
-// }
-
-// export default ColorBox;
-
-//rsfp
